@@ -1,3 +1,3 @@
 module.exports = {
-	requestAuthentication: require('./requestAtuhentication'),
+	RequestAuthentication: require('./requestAtuhentication'),
 }
