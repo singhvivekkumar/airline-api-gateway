@@ -84,12 +84,12 @@ npm start
 
 ### Request to signup in airline
 
-`POST http://localhost:3005/auth/api/v1/signup
-body: {
-	email: test@gamil.com,
-	password: 13245768
-}
-`
+POST: `http://localhost:3005/auth/api/v1/signup``
+body: `{
+		email: test@gamil.com,
+		password: 13245768
+	}`
+
 
 ### Response to signin in airline
 
@@ -98,18 +98,18 @@ body: {
     Connection: keep-alive
     Content-Type: application/json
 
-    ````{
+    {
     	"data": {
 			"id": 8,
-			"email": "test@gmail.com",
-			"password": "$2b$05$oVj3PHmAI.Fo6MjZDGkEZu.uXwL5oHvN1TfvgM3IIDRQLUvvrTOLm",
+			"email": "<EMAIL_ID>",
+			"password": "<ENCRYPTED_PASSWORD>",
 			"updatedAt": "2023-11-24T18:27:28.189Z",
 			"createdAt": "2023-11-24T18:27:28.189Z"
 		},
     	"success": true,
     	"message": "Successfully user signed in website",
     	"err": {}
-	}```
+	}
 
 ### Request to signup in airline
 
@@ -127,12 +127,12 @@ body: {
     Connection: keep-alive
     Content-Type: application/json
 
-    ````{
-    	"data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMDUkalF5LzBRRUJlRG95dWtNYkxtYklLZTJyY0hsS2hoUkk1amFjSVFSOXF1Ly82a2VydkFyaTYiLCJpYXQiOjE3MDA4NDk1MDIsImV4cCI6MTcwMDg5MjcwMn0.ERlJmWcroU8qXj3pTNoM_l50PoOHAo5Us4A-AYfcwZo",
+    {
+    	"data": <JWT_TOKEN>,
     	"success": true,
     	"message": "Successfully user signed in website",
     	"err": {}
-	}```
+	}
 
 
 Congratulations! Your backend is now running at http://localhost:3005/.
