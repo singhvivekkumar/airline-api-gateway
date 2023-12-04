@@ -43,7 +43,8 @@ router.use(
 );
 
 router.use(
-	'/search', 
+	'/search',
+	RequestAuthentication.requestAuthentication,
 	createProxyMiddleware({
 		target: SEARCH_SERVICE, 
 		changeOrigin: true,

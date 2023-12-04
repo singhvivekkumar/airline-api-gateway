@@ -10,7 +10,7 @@ const requestAuthentication = async (req, res, next) => {
 			}
 		})
 		if(response.data.success) {
-			console.log("hii vivek by middleware");
+			console.log("hii vivek, I am middleware");
 			next();
 		} else {
 			return res.status(401).json({

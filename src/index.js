@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { PORT } = require('./config/serverConfig');
 const morgan = require('morgan');
 const { rateLimit } = require('express-rate-limit');
 
+const { PORT } = require('./config/serverConfig');
 const { router } = require('./routes');
 
 const startServer = () => {
