@@ -3,14 +3,14 @@ const axios = require('axios');
 
 const requestAuthentication = async (req, res, next) => {
 	try {
-		// console.log(req.headers['x-access-token']);
+		console.log(req.headers, req.query);
 		const response = await axios.get(AUTHENICATE_URL, {
 			headers: {
 				'x-access-token': req.headers['x-access-token']
 			}
 		})
 		if(response.data.success) {
-			console.log("hii vivek, I am middleware");
+			console.log("I am middleware from api gateway to validate authentication request");
 			next();
 		} else {
 			return res.status(401).json({
@@ -69,5 +69,6 @@ const testMiddleware = async (req, res, next) => {
 
 module.exports = {
 	requestAuthentication,
-	testMiddleware
+	testMiddleware,
+	makeRequest
 };

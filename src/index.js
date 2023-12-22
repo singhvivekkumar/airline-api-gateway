@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const { rateLimit } = require('express-rate-limit');
+const cors = require('cors');
 
 const { PORT } = require('./config/serverConfig');
 const { router } = require('./routes');
@@ -17,6 +18,9 @@ const startServer = () => {
 
 	// to see every log
 	app.use(morgan("combined"));
+
+	// cors
+	app.use(cors());
 
 	// Apply the rate limiting middleware to allow number of requests.
 	app.use(limiter)
