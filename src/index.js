@@ -5,15 +5,16 @@ const { rateLimit } = require("express-rate-limit");
 const cors = require("cors");
 
 const { PORT } = require("./config/serverConfig");
-const { router } = require("./routes");
-const client = require("./redis/client");
+const router = require("./routes");
+// const client = require("./redis/client");
 
 const startServer = () => {
 	const app = express();
 
 	const limiter = rateLimit({
 		windowMs: 2 * 60 * 1000, // 15 minutes
-		limit: 5, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+		limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+		message: { message: "To many request you block by rate limiter"}
 	});
 
 	// to see every log

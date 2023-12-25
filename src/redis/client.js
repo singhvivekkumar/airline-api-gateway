@@ -1,8 +1,4 @@
-const { Redis } = require("ioredis");
 
-const client = new Redis();
-
-module.exports = client;
 
 // redis
 // const result = await client.get("user:1");
