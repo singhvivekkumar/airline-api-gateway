@@ -22,7 +22,7 @@ router.use(
 	FlightProxy
 );
 
-router.get("/api/home", (req, res) => {
+router.get("/health", (req, res) => {
 	res.status(200).json({
 		message: "successfully hitted api gateway",
 	});
